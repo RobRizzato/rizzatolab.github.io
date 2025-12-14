@@ -1,7 +1,9 @@
 :root{
   --bg:#0c0d10;
+  --panel:#12141a;
   --text:#f1f2f4;
   --muted:#9aa0aa;
+  --accent:#3dd6c6;
   --line:#1e222b;
 }
 
@@ -10,11 +12,10 @@ html,body{margin:0;padding:0}
 
 body{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif;
-  color: var(--text);
   background: var(--bg);
+  color: var(--text);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 /* ---------- HERO ---------- */
@@ -23,39 +24,72 @@ body{
   position: relative;
   height: 100vh;
   background:
-    linear-gradient(rgba(12,13,16,0.85), rgba(12,13,16,0.85)),
+    linear-gradient(rgba(12,13,16,0.7), rgba(12,13,16,0.85)),
     url("background.jpg") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
-.hero-inner{
-  max-width: 900px;
-  padding: 20px;
+.hero-text{
+  position: absolute;
+  left: 60px;
+  bottom: 80px;
 }
 
-.hero h1{
+.hero-text h1{
   margin: 0;
   font-size: 56px;
   font-weight: 600;
   letter-spacing: -0.03em;
 }
 
-.hero-tagline{
-  margin-top: 18px;
-  font-size: 22px;
+.hero-text p{
+  margin-top: 12px;
+  font-size: 20px;
   color: var(--muted);
 }
 
-/* scroll cue */
 .scroll-indicator{
   position: absolute;
   bottom: 30px;
-  font-size: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
   color: var(--muted);
   opacity: 0.8;
+}
+
+/* ---------- NAV BAR ---------- */
+
+.top-nav{
+  position: sticky;
+  top: 0;
+  background: rgba(18,20,26,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  display: none;
+  z-index: 100;
+}
+
+.top-nav.visible{
+  display: block;
+}
+
+.top-nav ul{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.top-nav a{
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.top-nav a:hover{
+  color: var(--accent);
 }
 
 /* ---------- CONTENT ---------- */
@@ -66,8 +100,6 @@ body{
   padding: 100px 20px;
 }
 
-/* ---------- INTRO ---------- */
-
 .intro{
   margin-bottom: 120px;
 }
@@ -75,17 +107,14 @@ body{
 .intro-main{
   font-size: 26px;
   max-width: 65ch;
-  margin: 0 0 20px;
 }
 
 .intro-sub{
+  margin-top: 20px;
   font-size: 18px;
   color: var(--muted);
   max-width: 75ch;
-  margin: 0;
 }
-
-/* ---------- SECTIONS ---------- */
 
 .block{
   padding: 100px 0;
@@ -96,46 +125,28 @@ body{
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin: 0 0 40px;
   color: var(--muted);
-}
-
-/* ---------- RESEARCH ---------- */
-
-.research-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-}
-
-.research-item h3{
-  margin: 0 0 14px;
-  font-size: 19px;
-  font-weight: 600;
-}
-
-.research-item p{
-  margin: 0;
-  font-size: 16px;
-  color: var(--muted);
+  margin-bottom: 40px;
 }
 
 /* ---------- FOOTER ---------- */
 
 .site-footer{
   border-top: 1px solid var(--line);
-  padding: 40px 20px;
+  padding: 40px;
   text-align: center;
   font-size: 13px;
   color: var(--muted);
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 900px){
-  .research-grid{grid-template-columns:1fr}
-  .hero h1{font-size:42px}
-  .hero-tagline{font-size:18px}
-  .intro-main{font-size:22px}
+  .hero-text{
+    left: 24px;
+    bottom: 60px;
+  }
+  .hero-text h1{
+    font-size: 40px;
+  }
 }
-
