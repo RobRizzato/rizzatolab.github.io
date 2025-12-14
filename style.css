@@ -1,8 +1,9 @@
 :root{
-  --text:#121417;
-  --muted:#58606a;
-  --line:#e9edf2;
-  --bg:#ffffff;
+  --bg:#0e0f11;
+  --panel:#13151a;
+  --text:#f2f3f5;
+  --muted:#a0a6b0;
+  --line:#242833;
 }
 
 *{box-sizing:border-box}
@@ -15,158 +16,125 @@ body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
-  /* subtle global background */
   background:
-    radial-gradient(1200px 600px at 20% -10%, #f4f6f9 0%, transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, #f6f8fb 0%, transparent 55%),
-    #ffffff;
+    radial-gradient(1000px 600px at 20% -10%, #171a22 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, #141822 0%, transparent 55%),
+    var(--bg);
 }
 
-/* ---------- LAYOUT ---------- */
+/* ---------- SITE HEADER ---------- */
 
-.wrap{
-  max-width: 980px;
+.site-header{
+  padding: 110px 20px 90px;
+}
+
+.header-inner{
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 56px 20px 40px;
 }
 
-.header{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 16px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--line);
-}
-
-.labname{
-  font-size: 42px;
+.site-header h1{
+  margin: 0;
+  font-size: 48px;
   font-weight: 600;
   letter-spacing: -0.03em;
 }
 
 .tagline{
-  margin-top: 10px;
+  margin-top: 14px;
+  font-size: 20px;
   color: var(--muted);
-  font-size: 17px;
 }
 
-.nav{
-  display:flex;
-  gap: 14px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
+/* ---------- MAIN CONTENT ---------- */
 
-.nav a{
-  color: var(--muted);
-  text-decoration:none;
-  font-size: 14px;
-  padding: 6px 8px;
-  border-radius: 10px;
-}
-
-.nav a:hover{
-  background: #f5f7fa;
-  color: var(--text);
+.content{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px;
 }
 
 /* ---------- INTRO ---------- */
 
-.hero{
-  padding: 34px 0 10px;
+.intro{
+  margin-bottom: 120px;
 }
 
-.lead{
-  font-size: 22px;
-  max-width: 68ch;
-  margin: 0 0 14px;
+.intro-main{
+  font-size: 26px;
+  max-width: 65ch;
+  margin: 0 0 22px;
 }
 
-.sublead{
-  margin: 0;
+.intro-sub{
+  font-size: 18px;
   color: var(--muted);
   max-width: 75ch;
-  font-size: 16.5px;
+  margin: 0;
 }
 
 /* ---------- SECTIONS ---------- */
 
-.section{
-  padding: 56px 0;
+.block{
+  padding: 100px 0;
   border-top: 1px solid var(--line);
 }
 
-.section h2{
-  font-size: 18px;
-  letter-spacing: 0.02em;
+.block h2{
+  font-size: 14px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin: 0 0 18px;
+  margin: 0 0 48px;
+  color: var(--muted);
 }
 
-/* ---------- CARDS ---------- */
+/* ---------- RESEARCH ---------- */
 
-.cards{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+.research-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
 }
 
-.card{
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 22px 22px 20px;
-  background: #fff;
-}
-
-.card h3{
-  margin: 0 0 10px;
-  font-size: 17px;
+.research-item h3{
+  margin: 0 0 16px;
+  font-size: 20px;
   font-weight: 600;
 }
 
-.card p{
+.research-item p{
   margin: 0;
   color: var(--muted);
-  font-size: 15.5px;
+  font-size: 16.5px;
 }
-
-/* ---------- TWO COLUMN ---------- */
-
-.two-col{
-  display:grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 18px;
-  align-items:start;
-}
-
-.note{
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 16px;
-  background: #fbfcfe;
-}
-
-.note-title{
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.muted{color:var(--muted)}
 
 /* ---------- FOOTER ---------- */
 
-.footer{
+.site-footer{
   border-top: 1px solid var(--line);
-  padding-top: 18px;
-  margin-top: 18px;
-  font-size: 13px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* ---------- RESPONSIVE ---------- */
 
-@media (max-width: 860px){
-  .header{align-items:flex-start; flex-direction:column}
-  .cards{grid-template-columns: 1fr}
-  .two-col{grid-template-columns: 1fr}
+@media (max-width: 900px){
+  .research-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .site-header{
+    padding: 90px 20px 70px;
+  }
+
+  .site-header h1{
+    font-size: 40px;
+  }
+
+  .intro-main{
+    font-size: 22px;
+  }
 }
+
