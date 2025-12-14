@@ -155,3 +155,68 @@ body{
     font-size: 40px;
   }
 }
+
+
+.affiliations{
+  padding: 80px 20px 60px;
+  background: linear-gradient(
+    rgba(10,11,14,0.95),
+    rgba(10,11,14,0.95)
+  );
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.affiliation-grid{
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.affiliation-card h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.affiliation-line{
+  width: 48px;
+  height: 2px;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,0.25);
+}
+
+.affiliation-card p{
+  color: #aeb6c2;
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.affiliation-card a{
+  font-size: 14px;
+  text-decoration: none;
+  color: #7fd3c1;
+}
+
+.affiliation-card a:hover{
+  text-decoration: underline;
+}
+
+/* subtle identity accents */
+.affiliation-card.mcqst .affiliation-line{
+  background: #7fd3c1;
+}
+
+.affiliation-card.tum .affiliation-line{
+  background: #4fa3ff;
+}
+
+@media (max-width: 760px){
+  .affiliation-grid{
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
