@@ -12,14 +12,26 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <h1>Rizzato Lab</h1>
-      <p class="hero-tagline">Low Dimensional Quantum Spin Platforms</p>
+    <div class="hero-text">
+      <h1>RizzatoLab</h1>
+      <p>Low Dimensional Quantum Spin Platforms</p>
     </div>
-    <div class="scroll-indicator">↓</div>
+    <div class="scroll-indicator">⌄</div>
   </section>
 
-  <!-- MAIN CONTENT -->
+  <!-- NAVIGATION -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">People</a></li>
+      <li><a href="#">Publications</a></li>
+      <li><a href="#">Tools</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
   <main class="content">
 
     <section class="intro">
@@ -36,54 +48,7 @@
 
     <section class="block">
       <h2>Research</h2>
-
-      <div class="research-grid">
-        <div class="research-item">
-          <h3>Spin defects in low dimensional materials</h3>
-          <p>
-            Discovery and characterization of novel spin defects in two dimensional materials and nanotubes,
-            focusing on coherence, control, and interaction with the local environment.
-          </p>
-        </div>
-
-        <div class="research-item">
-          <h3>Quantum spin resonance and nanoscale NMR</h3>
-          <p>
-            Development of quantum spin resonance techniques that extend EPR and NMR into the nanoscale regime,
-            using individual and few spin systems as local probes.
-          </p>
-        </div>
-
-        <div class="research-item">
-          <h3>Quantum sensing and hyperpolarization</h3>
-          <p>
-            Quantum sensing protocols and spin polarization transfer schemes to enhance magnetic resonance
-            sensitivity and enable new forms of nanoscale and in cell spectroscopy.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="block">
-      <h2>Team</h2>
-      <p>
-        <strong>Roberto Rizzato</strong><br>
-        Group Leader, Technical University of Munich
-      </p>
-    </section>
-
-    <section class="block">
-      <h2>Opportunities</h2>
-      <p>
-        The Rizzato Lab is recruiting PhD students and postdoctoral researchers.
-      </p>
-    </section>
-
-    <section class="block">
-      <h2>Contact</h2>
-      <p>
-        Email: roberto.rizzato [at] tum.de
-      </p>
+      <p>Content placeholder</p>
     </section>
 
   </main>
@@ -94,6 +59,17 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const nav = document.querySelector(".top-nav");
+    const heroHeight = document.querySelector(".hero").offsetHeight;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > heroHeight - 80) {
+        nav.classList.add("visible");
+      } else {
+        nav.classList.remove("visible");
+      }
+    });
   </script>
 
 </body>
