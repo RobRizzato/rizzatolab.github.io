@@ -238,3 +238,51 @@ body{
     gap: 36px;
   }
 }
+
+
+/* ---------- Research overview layout ---------- */
+
+.research-overview{
+  padding-top: 120px;
+}
+
+.research-columns{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px;
+  margin-top: 60px;
+}
+
+.research-column h3{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #bfc6d1;
+}
+
+.research-line{
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 18px 0 24px;
+}
+
+.research-column p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 900px){
+  .research-columns{
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .research-column h3{
+    font-size: 22px;
+  }
+}
