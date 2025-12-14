@@ -63,13 +63,14 @@
     const nav = document.querySelector(".top-nav");
     const heroHeight = document.querySelector(".hero").offsetHeight;
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > heroHeight - 80) {
-        nav.classList.add("visible");
-      } else {
-        nav.classList.remove("visible");
-      }
-    });
+window.addEventListener("scroll", () => {
+  if (window.scrollY > heroHeight * 0.2) {
+    nav.classList.add("visible");
+  } else {
+    nav.classList.remove("visible");
+  }
+});
+
   </script>
 
 </body>
