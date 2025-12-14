@@ -129,6 +129,11 @@ body{
   margin-bottom: 40px;
 }
 
+.section{
+  scroll-margin-top: 90px;
+}
+
+
 /* ---------- FOOTER ---------- */
 
 .site-footer{
