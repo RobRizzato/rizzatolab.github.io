@@ -31,12 +31,12 @@ body{
   padding-bottom: 22px;
   border-bottom: 1px solid var(--line);
 }
-
 .labname{
-  font-size: 34px;
-  font-weight: 650;
-  letter-spacing: -0.02em;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
+
 
 .tagline{
   margin-top: 6px;
