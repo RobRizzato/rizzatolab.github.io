@@ -17,10 +17,13 @@ body{
   text-rendering: optimizeLegibility;
 
   background:
-    radial-gradient(1000px 600px at 20% -10%, #171a22 0%, transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, #141822 0%, transparent 55%),
-    var(--bg);
+    linear-gradient(
+      rgba(12,13,16,0.92),
+      rgba(12,13,16,0.92)
+    ),
+    url("background.jpg") center / cover no-repeat fixed;
 }
+
 
 /* ---------- SITE HEADER ---------- */
 
