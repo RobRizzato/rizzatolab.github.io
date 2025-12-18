@@ -103,7 +103,7 @@ body{
 .top-nav a{
   color: var(--muted);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .top-nav a:hover{
@@ -115,7 +115,7 @@ body{
 .content{
   max-width: 1000px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 10px 20px;
 }
 
 .intro{
