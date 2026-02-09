@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Publications – RizzatoLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RizzatoLab Publications">
+   <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section id="home" class="hero hero-small">
+    <div class="hero-text">
+      <h1>Publications</h1>
+      <p class="hero-subtitle">Selected group publications</p>
+    </div>
+    <div class="scroll-indicator">⌄</div>
+    <div class="hero-credit">© Christoph Hohmann</div>
+  </section>
+
+  <!-- NAVIGATION -->
+  <nav class="top-nav visible">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="index.html#openings">Openings</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <section class="publications-section">
+      <p class="publications-intro">
+        This page is automatically generated looking for Roberto Rizzato's publications, using Google Scholar as a source.
+      </p>
+
+      <div class="pub-actions">
+        <a class="pub-button" href="https://scholar.google.com/citations?hl=it&user=OH2ScRMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">
+          Google Scholar
+        </a>
+          <a class="pub-button" href="../assets/publications.bib" target="_blank" rel="noopener">
+          BibTeX
+        </a>
+          <a class="pub-button" href="../assets/publications.json" target="_blank" rel="noopener">
+          JSON
+        </a>
+      </div>
+
+      <div id="publications-list" class="publications-list" aria-live="polite">
+        <div class="pub-empty">Loading publications…</div>
+        <noscript>
+          <div class="pub-empty">
+            JavaScript is disabled, so the publications list cannot be loaded.
+            Enable JavaScript or use the Google Scholar link above.
+          </div>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <section class="page-bottom">
+    <div class="page-bottom-grid">
+      <div>
+        <h4>Address</h4>
+        <p>
+          TUM Department Chemie<br>
+          Lichtenbergstr. 4<br>
+          85748 Garching b. München (Munich)<br>
+          Germany
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:roberto.rizzato@tum.de">roberto.rizzato@tum.de</a></p>
+      </div>
+      <div>
+        <h4>Impressum</h4>
+        <p>RizzatoLab — Technical University of Munich<br>Responsible: Roberto Rizzato</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Rizzato Lab</p>
+  </footer>
+
+    <script src="../assets/publications.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const nav = document.querySelector(".top-nav");
+    if (location.pathname && location.pathname.endsWith('publications.html')) {
+      nav.classList.add('visible');
+    }
+
+    function setActiveNav(){
+      const links = document.querySelectorAll('.top-nav a');
+      const page = location.pathname.split('/').pop() || 'index.html';
+      const hash = location.hash || '';
+      links.forEach(l => {
+        l.classList.remove('active');
+        const href = l.getAttribute('href');
+        let hrefPage = href;
+        let hrefHash = '';
+        if (href.startsWith('#')){
+          hrefPage = 'index.html';
+          hrefHash = href;
+        } else if (href.includes('#')){
+          const parts = href.split('#');
+          hrefPage = parts[0] || 'index.html';
+          hrefHash = '#' + parts[1];
+        }
+        if (!hrefPage) hrefPage = 'index.html';
+
+        const skipHashes = ['#openings', '#contact'];
+        if (hrefHash) {
+          if (page === 'index.html') {
+            if (hash && hrefHash === hash && !skipHashes.includes(hrefHash)) l.classList.add('active');
+            else if (!hash && (href === '#home' || href === 'index.html#home' || href === 'index.html' || href === './' )) l.classList.add('active');
+          }
+        } else {
+          if (hrefPage === page) l.classList.add('active');
+        }
+      });
+    }
+
+    function escapeHtml(value){
+      return String(value).replace(/[&<>"']/g, (ch) => {
+        switch (ch) {
+          case '&': return '&amp;';
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '"': return '&quot;';
+          case "'": return '&#39;';
+          default: return ch;
+        }
+      });
+    }
+
+    function renderPublications(pubs){
+      const container = document.getElementById('publications-list');
+      if (!Array.isArray(pubs) || pubs.length === 0){
+        container.innerHTML = `
+          <div class="pub-empty">
+            No publications loaded yet. If you opened this file directly (file://), the browser may block loading JSON.
+            Run a local server (see README) or open the deployed GitHub Pages site.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = pubs.map(p => {
+        const year = p && p.year ? escapeHtml(p.year) : '';
+        const title = p && p.title ? escapeHtml(p.title) : 'Untitled';
+        const authors = (p && Array.isArray(p.authors)) ? escapeHtml(p.authors.join(', ')) : '';
+        const venue = (p && p.venue) ? escapeHtml(p.venue) : '';
+
+        const links = (p && p.links && typeof p.links === 'object') ? p.links : {};
+        const doi = links.doi ? String(links.doi) : '';
+        const url = links.url ? String(links.url) : '';
+
+        const linkHtml = [
+          url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">Link</a>` : '',
+          doi ? `<a href="https://doi.org/${escapeHtml(doi)}" target="_blank" rel="noopener">DOI</a>` : ''
+        ].filter(Boolean).join('');
+
+        return `
+          <div class="publication-item">
+            <div class="pub-year">${year || '&nbsp;'}</div>
+            <div class="pub-content">
+              <h3>${title}</h3>
+              ${authors ? `<p class="pub-authors">${authors}</p>` : ''}
+              ${venue ? `<p class="pub-venue">${venue}</p>` : ''}
+              ${linkHtml ? `<div class="pub-links">${linkHtml}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    setActiveNav();
+
+    // Prefer a local JS data file (works even when opening via file://).
+    if (Array.isArray(window.PUBLICATIONS) && window.PUBLICATIONS.length > 0) {
+      renderPublications(window.PUBLICATIONS);
+    } else {
+        fetch('../assets/publications.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))
+        .then(renderPublications)
+        .catch(() => renderPublications([]));
+    }
+  </script>
+
+</body>

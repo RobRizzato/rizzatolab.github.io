@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Research – RizzatoLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RizzatoLab Research Topics">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section id="home" class="hero hero-small">
+    <div class="hero-text">
+      <h1>Research</h1>
+      <p class="hero-subtitle">Our Topics</p>
+    </div>
+    <div class="scroll-indicator">⌄</div>
+    <div class="hero-credit">© Christoph Hohmann</div>
+  </section>
+
+  <!-- NAVIGATION -->
+  <nav class="top-nav visible">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="index.html#openings">Openings</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+
+    <section class="section research-overview">
+      <h2>Research</h2>
+      <div class="research-banner" data-rotate-images="../assets/img/In%20the%20lab%201.JPG,../assets/img/In%20the%20lab%202.JPG" data-rotate-interval="6000">
+        <img src="../assets/img/In%20the%20lab%201.JPG" alt="In the lab">
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <div class="research-figure">
+            <img src="../assets/img/stripline.png" alt="Microwave control for spin defects">
+          </div>
+          <h3>All D - Spin defects discovery</h3>
+          <p>Our focus is to explore novel spin defects in solid-state materials and to develop new methods for the systematic screening and identification of promising host systems. By combining optical and microwave spectroscopy with wide-field microscopy, we aim to establish scalable approaches to reveal, understand, and engineer spin and optical properties down to the single-defect level. Our long-term goal is to enable robust solid-state quantum technologies that operate under realistic conditions and can be applied across disciplines, from materials science to biology.</p>
+        </article>
+
+        <article class="research-card">
+          <div class="research-figure">
+            <img src="../assets/img/hBN.png" alt="hBN for atomically thin quantum sensors">
+          </div>
+          <h3>2D - Atomically thin quantum sensors</h3>
+          <p>Our goal is to explore and develop optically active spin systems in two-dimensional materials. Starting from platforms such as hexagonal boron nitride and exploiting defects including boron vacancy centers as well as newly discovered spin one half pair defects, we aim to reduce the sensor thickness to the atomic limit in order to maximize the interaction between the quantum sensor and its target, thereby enhancing detection sensitivity. The ultimate objective is to realize robust atomically thin quantum sensing architectures with full spin control and nanoscale sensitivity.</p>
+        </article>
+
+        <article class="research-card">
+          <div class="research-figure">
+            <img src="../assets/img/hBN%20Nanotube_final.jpg" alt="Nanotube-based quantum technology">
+          </div>
+          <h3>1D - Nanotube based quantum technology</h3>
+          <p>We are developing a new paradigm of spin based quantum technology built on one dimensional nanotube architectures. By embedding optically active and omnidirectional spin 1/2 defect sensors into nanotubes, this platform uniquely unlocks a broad range of sensing strategies, spanning high surface area sensors based on nanotube ensembles, dynamic nanoprobes operating in complex environments, and, at the level of single nanotubes and single defects, novel scanning and raster based approaches as well as single molecule magnetic resonance spectroscopy.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+    <section class="page-bottom">
+      <div class="page-bottom-grid">
+        <div>
+          <h4>Address</h4>
+          <p>
+            TUM Department Chemie<br>
+            Lichtenbergstr. 4<br>
+            85748 Garching b. München (Munich)<br>
+            Germany
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="mailto:roberto.rizzato@tum.de">roberto.rizzato@tum.de</a></p>
+        </div>
+        <div>
+          <h4>Impressum</h4>
+          <p>RizzatoLab — Technical University of Munich<br>Responsible: Roberto Rizzato</p>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Rizzato Lab</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const nav = document.querySelector(".top-nav");
+    // keep nav visible on standalone subpages
+    if (location.pathname && location.pathname.endsWith('research.html')) {
+      nav.classList.add('visible');
+    }
+
+    // Highlight active nav link matching current page or section
+    function setActiveNav(){
+      const links = document.querySelectorAll('.top-nav a');
+      const page = location.pathname.split('/').pop() || 'index.html';
+      const hash = location.hash || '';
+      links.forEach(l => {
+        l.classList.remove('active');
+        const href = l.getAttribute('href');
+        let hrefPage = href;
+        let hrefHash = '';
+        if (href.startsWith('#')){
+          hrefPage = 'index.html';
+          hrefHash = href;
+        } else if (href.includes('#')){
+          const parts = href.split('#');
+          hrefPage = parts[0] || 'index.html';
+          hrefHash = '#' + parts[1];
+        }
+        if (!hrefPage) hrefPage = 'index.html';
+
+        // handle fragment links specially (don't wrongly match index.html)
+        const skipHashes = ['#openings', '#contact'];
+        if (hrefHash) {
+          if (page === 'index.html') {
+            if (hash && hrefHash === hash && !skipHashes.includes(hrefHash)) l.classList.add('active');
+            else if (!hash && (href === '#home' || href === 'index.html#home' || href === 'index.html' || href === './' )) l.classList.add('active');
+          }
+        } else {
+          if (hrefPage === page) l.classList.add('active');
+        }
+      });
+    }
+    setActiveNav();
+
+    // Rotate the main research banner between multiple images.
+    (function initResearchBannerRotation(){
+      const banner = document.querySelector('.research-banner[data-rotate-images]');
+      if (!banner) return;
+
+      const raw = banner.getAttribute('data-rotate-images') || '';
+      const images = raw.split(',').map(s => s.trim()).filter(Boolean);
+      if (images.length < 2) return;
+
+      const intervalMs = Math.max(2000, parseInt(banner.getAttribute('data-rotate-interval') || '6000', 10) || 6000);
+
+      const imgA = banner.querySelector('img');
+      if (!imgA) return;
+
+      banner.classList.add('rotating');
+      imgA.classList.add('is-active');
+      imgA.src = images[0];
+
+      const imgB = document.createElement('img');
+      imgB.alt = imgA.alt;
+      imgB.setAttribute('aria-hidden', 'true');
+      imgB.src = images[1];
+      banner.appendChild(imgB);
+
+      // Preload the rest (if any).
+      images.slice(2).forEach(src => {
+        const pre = new Image();
+        pre.src = src;
+      });
+
+      let index = 1;
+      let showA = false; // imgA is active initially
+
+      window.setInterval(() => {
+        index = (index + 1) % images.length;
+        const nextSrc = images[index];
+
+        const show = showA ? imgA : imgB;
+        const hide = showA ? imgB : imgA;
+
+        show.src = nextSrc;
+        show.classList.add('is-active');
+        hide.classList.remove('is-active');
+
+        showA = !showA;
+      }, intervalMs);
+    })();
+  </script>
+
+</body>
+</html>

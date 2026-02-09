@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>People – RizzatoLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RizzatoLab Team Members">
+  <link rel="stylesheet" href="../style.css">
+  </head>
+
+<body>
+
+  <!-- HERO -->
+  <section id="home" class="hero hero-small">
+    <div class="hero-text">
+      <h1>People</h1>
+      <p class="hero-subtitle">Our Team</p>
+    </div>
+    <div class="scroll-indicator">⌄</div>
+    <div class="hero-credit">© Christoph Hohmann</div>
+  </section>
+
+  <!-- NAVIGATION -->
+  <nav class="top-nav visible">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="index.html#openings">Openings</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <section class="people-section">
+      <p class="people-intro">
+        Meet the members of the RizzatoLab. <!--We are a diverse team of physicists, chemists, and engineers
+        passionate about quantum sensing and low-dimensional materials.-->
+      </p>
+
+      <div class="people-grid">
+
+        <!-- PERSON CARD 1 -->
+        <div class="person-card">
+          <div class="person-image">
+            <img src="../assets/img/Roberto.jpg" alt="Roberto Rizzato">
+          </div>
+          <h3 class="person-name">
+            <a href="mailto:roberto.rizzato@tum.de">Roberto Rizzato</a>
+          </h3>
+          <p class="person-title">Group Leader, Technical University of Munich</p>
+          <p class="person-description">
+            I studied Chemistry at the University of Bologna, where I obtained my Master’s degree. I received my PhD from the Max Planck Institute for Biophysical Chemistry in Göttingen in 2016, specializing in electron spin resonance spectroscopy and advanced electron nuclear double resonance (ENDOR) techniques. After my doctorate, I worked in industry as a consultant, and in 2019 I joined Dominik Bucher’s Quantum Sensing Group at the Technical University of Munich, contributing to the development of diamond-based quantum sensors and the exploration of novel spin defects in low-dimensional materials. In 2025, I was awarded an ERC Consolidator Grant for the project NMR-NANOTUBES, enabling me to establish my independent research group at TUM.
+          </p>
+        </div>
+
+        <!-- PERSON CARD 2 (TEMPLATE) -->
+        <div class="person-card">
+          <div class="person-image">
+            <img src="../assets/img/Berk.jpeg" alt="Team Member">
+          </div>
+          <h3 class="person-name">
+            <a href="mailto:berk.kiliclar@tum.de">Berk Kiliclar</a>
+          </h3>
+          <p class="person-title">Master's student, Technical University of Munich</p>
+          <p class="person-description">
+            I completed my bachelor’s in physics at LMU and am currently doing a master’s degree in condensed matter physics at TUM. My thesis focuses on the simultaneous characterization of multiple defects using an EMCCD camera.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="joining-info">
+        <h3>Joining the Lab</h3>
+        <p>
+          We are recruiting PhD students and postdoctoral researchers.
+          If you are interested in joining our group, please get in touch with a CV and a short statement of interest.
+        </p>
+        <p>
+          <strong>Contact:</strong> <a href="mailto:roberto.rizzato@tum.de">roberto.rizzato@tum.de</a>
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+    <section class="page-bottom">
+      <div class="page-bottom-grid">
+        <div>
+          <h4>Address</h4>
+          <p>
+            TUM Department Chemie<br>
+            Lichtenbergstr. 4<br>
+            85748 Garching b. München (Munich)<br>
+            Germany
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="mailto:roberto.rizzato@tum.de">roberto.rizzato@tum.de</a></p>
+        </div>
+        <div>
+          <h4>Impressum</h4>
+          <p>RizzatoLab — Technical University of Munich<br>Responsible: Roberto Rizzato</p>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Rizzato Lab</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const nav = document.querySelector(".top-nav");
+
+    // Keep nav visible on standalone pages like people.html
+    if (location.pathname && location.pathname.endsWith('people.html')) {
+      nav.classList.add('visible');
+    } else {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+          nav.classList.add("visible");
+        } else {
+          nav.classList.remove("visible");
+        }
+      });
+    }
+
+    // Highlight active nav link matching current page or section
+    function setActiveNav(){
+      const links = document.querySelectorAll('.top-nav a');
+      const page = location.pathname.split('/').pop() || 'index.html';
+      const hash = location.hash || '';
+      links.forEach(l => {
+        l.classList.remove('active');
+        const href = l.getAttribute('href');
+        let hrefPage = href;
+        let hrefHash = '';
+        if (href.startsWith('#')){
+          hrefPage = 'index.html';
+          hrefHash = href;
+        } else if (href.includes('#')){
+          const parts = href.split('#');
+          hrefPage = parts[0] || 'index.html';
+          hrefHash = '#' + parts[1];
+        }
+        if (!hrefPage) hrefPage = 'index.html';
+
+        // handle fragment links specially (don't wrongly match index.html)
+        const skipHashes = ['#openings', '#contact'];
+        if (hrefHash) {
+          if (page === 'index.html') {
+            if (hash && hrefHash === hash && !skipHashes.includes(hrefHash)) l.classList.add('active');
+            else if (!hash && (href === '#home' || href === 'index.html#home' || href === 'index.html' || href === './' )) l.classList.add('active');
+          }
+        } else {
+          if (hrefPage === page) l.classList.add('active');
+        }
+      });
+    }
+    setActiveNav();
+  </script>
+
+</body>
+</html>
