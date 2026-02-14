@@ -1,10 +1,82 @@
+/*
+  Theme
+  - Default is LIGHT (white) theme.
+  - To switch back to the previous dark theme later, add this attribute to every page:
+      <html lang="en" data-theme="dark">
+*/
+
 :root{
+  --bg:#ffffff;
+  --panel:#f6f7f9;
+  --text:#0c0d10;
+  --text-soft:#374151;
+  --muted:#4b5563;
+  --accent:#3dd6c6;
+  --line:#e5e7eb;
+
+  --surface-bg: rgba(2,6,23,0.03);
+  --surface-border: rgba(2,6,23,0.10);
+  --chip-bg: rgba(2,6,23,0.05);
+  --chip-border: rgba(2,6,23,0.12);
+
+  --nav-bg: rgba(255,255,255,0.92);
+
+  /* Hero overlays (transparent in light theme to avoid washout) */
+  --hero-overlay: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
+  --hero-overlay-strong: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
+  --hero-credit-text: rgba(12,13,16,0.86);
+  --hero-credit-bg: rgba(255,255,255,0.65);
+
+  /* Hero title text styling (keeps images untouched) */
+  --hero-title-color: rgba(255,255,255,0.98);
+  --hero-subtitle-color: rgba(255,255,255,0.90);
+  --hero-title-shadow: 0 2px 28px rgba(0,0,0,0.68), 0 0 2px rgba(0,0,0,0.85);
+  --hero-subtitle-shadow: 0 2px 22px rgba(0,0,0,0.62), 0 0 2px rgba(0,0,0,0.75);
+  --hero-title-stroke: rgba(0,0,0,0.22);
+
+  --affiliations-bg: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92));
+  --affiliations-border: rgba(2,6,23,0.10);
+
+  --fade-bg: linear-gradient(180deg, rgba(2,6,23,0.03), rgba(0,0,0,0));
+  --dot-bg: rgba(2,6,23,0.12);
+}
+
+html{ color-scheme: light; }
+
+html[data-theme="dark"]{ color-scheme: dark; }
+
+html[data-theme="dark"]:root{
   --bg:#0c0d10;
   --panel:#12141a;
   --text:#f1f2f4;
+  --text-soft:#aeb6c2;
   --muted:#9aa0aa;
   --accent:#3dd6c6;
   --line:#1e222b;
+
+  --surface-bg: rgba(18,20,26,0.6);
+  --surface-border: rgba(255,255,255,0.06);
+  --chip-bg: rgba(255,255,255,0.03);
+  --chip-border: rgba(255,255,255,0.06);
+
+  --nav-bg: rgba(18,20,26,0.95);
+
+  --hero-overlay: linear-gradient(rgba(12,13,16,0.4), rgba(12,13,16,0.2));
+  --hero-overlay-strong: linear-gradient(rgba(12,13,16,0.7), rgba(12,13,16,0.6));
+  --hero-credit-text: rgba(241,242,244,0.92);
+  --hero-credit-bg: rgba(0,0,0,0.28);
+
+  --hero-title-color: rgba(255,255,255,0.98);
+  --hero-subtitle-color: rgba(255,255,255,0.90);
+  --hero-title-shadow: 0 2px 30px rgba(0,0,0,0.72), 0 0 2px rgba(0,0,0,0.90);
+  --hero-subtitle-shadow: 0 2px 24px rgba(0,0,0,0.66), 0 0 2px rgba(0,0,0,0.80);
+  --hero-title-stroke: rgba(0,0,0,0.26);
+
+  --affiliations-bg: linear-gradient(rgba(10,11,14,0.95), rgba(10,11,14,0.95));
+  --affiliations-border: rgba(255,255,255,0.06);
+
+  --fade-bg: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0));
+  --dot-bg: rgba(255,255,255,0.08);
 }
 
 *{box-sizing:border-box}
@@ -70,7 +142,7 @@ body{
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(12,13,16,0.7), rgba(12,13,16,0.6));
+  background: var(--hero-overlay-strong);
   z-index: 1;
 }
 
@@ -97,7 +169,7 @@ body{
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(12,13,16,0.4), rgba(12,13,16,0.2));
+  background: var(--hero-overlay);
   z-index: 1;
 }
 
@@ -106,6 +178,7 @@ body{
   left: 60px;
   bottom: 80px;
   z-index: 2;
+  padding: 10px 0;
 }
 
 
@@ -145,8 +218,8 @@ body{
 }
 
 .person-card{
-  background: rgba(18,20,26,0.6);
-  border: 1px solid rgba(255,255,255,0.04);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
   padding: 18px;
   border-radius: 12px;
   text-align: center;
@@ -161,7 +234,7 @@ body{
   border-radius: 50%;
   display: block;
   margin: 0 auto 12px;
-  border: 2px solid rgba(255,255,255,0.04);
+  border: 2px solid var(--surface-border);
 }
 
 .person-name a{
@@ -176,7 +249,7 @@ body{
 }
 
 .person-description{
-  color: #aeb6c2;
+  color: var(--text-soft);
   font-size: 14px;
   line-height: 1.6;
   text-align: justify;
@@ -213,8 +286,8 @@ body{
   gap: 8px;
   padding: 10px 12px;
   border-radius: 10px;
-  background: rgba(18,20,26,0.6);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
   color: var(--text);
   text-decoration: none;
   font-size: 14px;
@@ -236,16 +309,16 @@ body{
   gap: 16px;
   padding: 16px;
   border-radius: 12px;
-  background: rgba(18,20,26,0.6);
-  border: 1px solid rgba(255,255,255,0.04);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
 }
 
 .pub-year{
   font-weight: 700;
   color: var(--text);
   opacity: 0.9;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
   border-radius: 10px;
   height: fit-content;
   padding: 8px 10px;
@@ -260,7 +333,7 @@ body{
 
 .pub-authors{
   margin: 8px 0 0;
-  color: #aeb6c2;
+  color: var(--text-soft);
   font-size: 14px;
 }
 
@@ -281,7 +354,7 @@ body{
   display: inline-block;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--surface-border);
   text-decoration: none;
   color: var(--accent);
   font-size: 13px;
@@ -293,8 +366,8 @@ body{
 
 .pub-empty{
   color: var(--muted);
-  background: rgba(255,255,255,0.02);
-  border: 1px dashed rgba(255,255,255,0.10);
+  background: var(--chip-bg);
+  border: 1px dashed var(--chip-border);
   padding: 14px 16px;
   border-radius: 12px;
 }
@@ -316,15 +389,21 @@ body{
 
 .hero-text h1{
   margin: 0;
-  font-size: 56px;
+  font-size: 52px;
   font-weight: 600;
   letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--hero-title-color);
+  text-shadow: var(--hero-title-shadow);
+  -webkit-text-stroke: 1px var(--hero-title-stroke);
 }
 
 .hero-text p{
-  margin-top: -20px;
-  font-size: 30px;
-  
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--hero-subtitle-color);
+  text-shadow: var(--hero-subtitle-shadow);
 }
 
 .scroll-indicator{
@@ -342,19 +421,20 @@ body{
   right: 24px;
   bottom: 16px;
   z-index: 3;
-  color: rgba(241,242,244,0.92);
+  color: rgba(255,255,255,0.92);
   font-size: 13px;
   opacity: 0.95;
-  background: rgba(0,0,0,0.28);
-  padding: 6px 8px;
-  border-radius: 6px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.62);
 }
 /* ---------- NAV BAR ---------- */
 
 .top-nav{
   position: sticky;
   top: 0;
-  background: rgba(18,20,26,0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
   display: none;
@@ -364,7 +444,6 @@ body{
 .top-nav.visible{
   display: block;
 }
-
 .top-nav ul{
   max-width: 1100px;
   margin: 0 auto;
@@ -481,11 +560,8 @@ body{
 
 .affiliations{
   padding: 80px 20px 60px;
-  background: linear-gradient(
-    rgba(10,11,14,0.95),
-    rgba(10,11,14,0.95)
-  );
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: var(--affiliations-bg);
+  border-top: 1px solid var(--affiliations-border);
 }
 
 .affiliation-grid{
@@ -500,18 +576,18 @@ body{
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 12px;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .affiliation-line{
   width: 48px;
   height: 2px;
   margin-bottom: 18px;
-  background: rgba(255,255,255,0.25);
+  background: var(--chip-border);
 }
 
 .affiliation-card p{
-  color: #aeb6c2;
+  color: var(--text-soft);
   font-size: 15.5px;
   line-height: 1.7;
   margin: 0 0 16px;
@@ -520,7 +596,7 @@ body{
 .affiliation-card a{
   font-size: 14px;
   text-decoration: none;
-  color: #7fd3c1;
+  color: var(--accent);
 }
 
 .affiliation-card a:hover{
@@ -597,8 +673,8 @@ body{
 }
 
 .research-card{
-  background: rgba(18,20,26,0.03);
-  border: 1px solid rgba(255,255,255,0.03);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
   padding: 12px;
   border-radius: 12px;
   display: flex;
@@ -688,8 +764,8 @@ body{
 
 .research-column-figure{
   margin: 14px 0 18px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.04);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -699,7 +775,7 @@ body{
   height: 160px;
   object-fit: contain;
   display: block;
-  background: rgba(255,255,255,0.02);
+  background: var(--chip-bg);
 }
 
 .research-line{
@@ -742,7 +818,7 @@ body{
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 420ms ease, transform 420ms ease;
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0));
+  background: var(--fade-bg);
   border-radius: 10px;
   pointer-events: none; /* prevent invisible slides from blocking clicks */
   z-index: 0;
@@ -769,7 +845,7 @@ body{
 }
 .news-figure--contain img{
   object-fit: contain;
-  background: rgba(255,255,255,0.06);
+  background: var(--chip-bg);
   padding: 10px;
 }
 .news-content{
@@ -798,7 +874,7 @@ body{
 .dot{
   width: 12px;
   height: 12px;
-  background: rgba(255,255,255,0.08);
+  background: var(--dot-bg);
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -846,14 +922,26 @@ body{
 /* ---------- PAGE BOTTOM (three columns) ---------- */
 .page-bottom{
   padding: 28px 20px 18px;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid var(--line);
 }
+
+.funding-strip{
+  max-width: 1200px;
+  margin: 0 auto 14px;
+}
+
+.funding-strip h4{
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
 .page-bottom-grid{
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 18px;
   align-items: start;
 }
 .page-bottom h4{
@@ -864,11 +952,44 @@ body{
 .page-bottom p,
 .page-bottom a{
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.35;
   margin: 0 0 8px 0;
   text-decoration: none;
 }
 .page-bottom a:hover{ color: var(--accent); }
+
+.funding-logos{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.funding-logos img{
+  height: 56px;
+  width: auto;
+  max-width: min(260px, 100%);
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+}
+
+.funding-logos .funding-logo.erc img{
+  height: 120px;
+  max-width: min(460px, 100%);
+}
+
+@media (max-width: 600px){
+  .funding-logos .funding-logo.erc img{
+    height: 96px;
+  }
+}
+
+.funding-logos a:hover img{
+  opacity: 1;
+}
 
 @media (max-width: 900px){
   .page-bottom-grid{ grid-template-columns: 1fr; gap: 18px; }
