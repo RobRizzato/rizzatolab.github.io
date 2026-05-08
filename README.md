@@ -11,6 +11,21 @@ From the repository root:
 
 The publications list on `pages/publications.html` is generated from local data files so it works reliably on GitHub Pages.
 
+## Automatic updates
+
+The site can update publications automatically from OpenAlex, using Roberto Rizzato's OpenAlex author ID (`A5079611641`) and merging those records with the local BibTeX file.
+
+Run locally:
+
+- `python3 tools/update_publications_openalex.py`
+
+This updates:
+
+- `assets/publications.json`
+- `assets/publications.js`
+
+GitHub Actions also runs `.github/workflows/update-publications.yml` every Monday and can be started manually from the Actions tab.
+
 ### Step 1: Export BibTeX from Google Scholar
 
 - Open your Google Scholar profile

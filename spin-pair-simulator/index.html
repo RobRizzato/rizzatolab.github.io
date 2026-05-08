@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Spin Pair ODMR Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Standalone rate-equation simulator for singlet-triplet pathways, charge hopping, spin pairs, and ODMR contrast.">
+  <meta name="theme-color" content="#081923">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css?v=20260312ag">
+</head>
+
+<body>
+  <header class="hero">
+    <h1>Spin Pair ODMR Simulator</h1>
+    <p>Population flow from singlets to triplets, spin pairs, and ODMR contrast.</p>
+  </header>
+
+  <main class="content shell">
+    <section class="simulator-section" data-spin-pair-simulator>
+      <div class="simulator-intro">
+        <h2>Population kinetics and ODMR</h2>
+        <p id="sim-status" class="sim-status">Initializing simulator...</p>
+        <p>
+          This browser model treats the defect as a closed kinetic network: optical pumping populates the excited singlet,
+          ISC feeds the metastable triplet manifold, charge hopping generates spin-pair triplets, and recombination routes
+          return population to the ground singlet. ODMR is estimated by comparing steady-state photoluminescence with microwave
+          mixing disabled or enabled.
+        </p>
+        <p class="muted">
+          It is a population-level rate-equation model, not a full Hamiltonian or density-matrix treatment.
+        </p>
+        <p class="muted sim-version">Build 2026-03-12ag</p>
+      </div>
+
+      <div class="simulator-layout">
+        <aside class="simulator-panel">
+          <div class="simulator-panel-head">
+            <h3>Parameters</h3>
+            <div class="simulator-panel-actions">
+              <button id="sim-zero-all" type="button" class="pub-button" data-action="zero-all">Zero all</button>
+              <button id="sim-export-params" type="button" class="pub-button" data-action="export-params">Export params</button>
+              <button id="sim-save-defaults" type="button" class="pub-button" data-action="save-defaults">Save as my defaults</button>
+              <button id="sim-preset-realistic" type="button" class="pub-button" data-action="preset-realistic"
+                onclick="window.__spinPairApplyPreset && window.__spinPairApplyPreset('realistic')">Realistic preset</button>
+              <button id="sim-preset-positive" type="button" class="pub-button" data-action="preset-positive"
+                onclick="window.__spinPairApplyPreset && window.__spinPairApplyPreset('positive')">Positive ODMR preset</button>
+              <button id="sim-reset" type="button" class="pub-button" data-action="reset">Reset defaults</button>
+            </div>
+          </div>
+          <div class="sim-regime-toggle">
+            <label>
+              <span>Regime</span>
+              <select data-role="regime-mode">
+                <option value="single">Single spin pair</option>
+                <option value="ensemble">Ensemble</option>
+              </select>
+            </label>
+          </div>
+          <div class="sim-regime-toggle">
+            <label>
+              <span>Preset</span>
+              <select data-role="preset-select">
+                <option value="">Manual</option>
+                <option value="realistic">Realistic baseline</option>
+                <option value="positive">Positive ODMR</option>
+              </select>
+            </label>
+          </div>
+          <div class="sim-export-box">
+            <label for="sim-export-text">Current parameters export</label>
+            <textarea id="sim-export-text" data-role="export-text" readonly placeholder="Press 'Export params' to generate a JSON block you can paste into the chat."></textarea>
+          </div>
+          <form data-role="controls"></form>
+        </aside>
+
+        <div class="simulator-results">
+          <div class="sim-metrics" data-role="metrics"></div>
+
+          <div class="sim-top-grid">
+            <article class="sim-card sim-energy-card">
+              <div class="sim-energy-head">
+                <h3>Energy level diagram</h3>
+                <label class="sim-energy-mode">
+                  <span>View</span>
+                  <select data-role="energy-mode">
+                    <option value="off">MW off</option>
+                    <option value="on">MW on</option>
+                  </select>
+                </label>
+              </div>
+              <svg data-role="energy-diagram" class="sim-energy-diagram" viewBox="0 0 1000 640" aria-label="Energy level and transition diagram"></svg>
+              <p class="sim-energy-info" data-role="energy-info">Hover levels and arrows to inspect population and rate.</p>
+            </article>
+
+            <article class="sim-card">
+              <h3>ODMR sweep (simulated)</h3>
+              <canvas data-role="odmr-canvas" class="sim-canvas" width="980" height="320"></canvas>
+            </article>
+          </div>
+
+          <div class="sim-visual-grid">
+            <article class="sim-card">
+              <h3>PL transient</h3>
+              <canvas data-role="trace-canvas" class="sim-canvas" width="640" height="260"></canvas>
+              <p class="sim-plot-note" data-role="trace-note">Time axis in microseconds. `MW off` and `MW on` use the same startup transient; `MW on` is evaluated at the strongest ODMR peak frequency.</p>
+            </article>
+
+            <article class="sim-card">
+              <h3>Steady-state populations</h3>
+              <canvas data-role="bars-canvas" class="sim-canvas" width="640" height="320"></canvas>
+            </article>
+          </div>
+
+          <article class="sim-card">
+            <div class="sim-scan-head">
+              <h3>Contrast Scan</h3>
+              <div class="sim-scan-controls">
+                <label>
+                  <span>Mode</span>
+                  <select data-role="scan-mode">
+                    <option value="1d">1D scan</option>
+                    <option value="2d">2D heatmap</option>
+                  </select>
+                </label>
+                <label>
+                  <span>X parameter</span>
+                  <select data-role="scan-param">
+                    <option value="pairDistanceNm">Distance r</option>
+                    <option value="pairThetaDeg">Angle theta</option>
+                    <option value="pairPhiDeg">Angle phi</option>
+                    <option value="biasFieldmT">Bias field B0</option>
+                    <option value="pairExchangeMHz">Exchange J</option>
+                    <option value="kExc">Laser excitation</option>
+                    <option value="kRad">Radiative decay</option>
+                    <option value="kNonRad">Non-radiative decay</option>
+                    <option value="kISC">ISC rate</option>
+                    <option value="kTripletToSinglet">Triplet -> S0</option>
+                    <option value="kTripletSpinRelax">Triplet spin relaxation</option>
+                    <option value="defectSocTpm">SO coupling T±</option>
+                    <option value="defectSocT0">SO coupling T0</option>
+                    <option value="defectVibronicWidthMHz">Vibronic width</option>
+                    <option value="kCrtSinglet">k_crt^S</option>
+                    <option value="kCrtTriplet">k_crt^T</option>
+                    <option value="kRecSingletToS1">k_rec^S -> S1</option>
+                    <option value="kRecSingletToS0">k_rec^S -> S0</option>
+                    <option value="kRecTriplet">k_rec^T</option>
+                    <option value="kPairSpinRelax">k_pair_relax</option>
+                    <option value="kPairDiss">k_pair_diss</option>
+                    <option value="pairDistanceSigmaNm">sigma_r</option>
+                    <option value="pairThetaSigmaDeg">sigma_theta</option>
+                    <option value="pairExchangeSigmaMHz">sigma_J</option>
+                    <option value="brightPairYield">Bright pair yield</option>
+                    <option value="hyperfineATrans_MHz">A hyperfine trans.</option>
+                    <option value="hyperfineBTrans_MHz">B hyperfine trans.</option>
+                    <option value="hyperfineALong_MHz">A hyperfine long.</option>
+                    <option value="hyperfineBLong_MHz">B hyperfine long.</option>
+                  </select>
+                </label>
+                <label>
+                  <span>X start</span>
+                  <input type="number" step="0.1" value="1" data-role="scan-start">
+                </label>
+                <label>
+                  <span>X end</span>
+                  <input type="number" step="0.1" value="4" data-role="scan-end">
+                </label>
+                <label>
+                  <span>X points</span>
+                  <input type="number" step="1" value="31" data-role="scan-points">
+                </label>
+                <label>
+                  <span>Y parameter</span>
+                  <select data-role="scan-param-y">
+                    <option value="pairThetaDeg">Angle theta</option>
+                    <option value="pairPhiDeg">Angle phi</option>
+                    <option value="pairDistanceNm">Distance r</option>
+                    <option value="biasFieldmT">Bias field B0</option>
+                    <option value="pairExchangeMHz">Exchange J</option>
+                    <option value="kExc">Laser excitation</option>
+                    <option value="kRad">Radiative decay</option>
+                    <option value="kNonRad">Non-radiative decay</option>
+                    <option value="kISC">ISC rate</option>
+                    <option value="kTripletToSinglet">Triplet -> S0</option>
+                    <option value="kTripletSpinRelax">Triplet spin relaxation</option>
+                    <option value="defectSocTpm">SO coupling T±</option>
+                    <option value="defectSocT0">SO coupling T0</option>
+                    <option value="defectVibronicWidthMHz">Vibronic width</option>
+                    <option value="kCrtSinglet">k_crt^S</option>
+                    <option value="kCrtTriplet">k_crt^T</option>
+                    <option value="kRecSingletToS1">k_rec^S -> S1</option>
+                    <option value="kRecSingletToS0">k_rec^S -> S0</option>
+                    <option value="kRecTriplet">k_rec^T</option>
+                    <option value="kPairSpinRelax">k_pair_relax</option>
+                    <option value="kPairDiss">k_pair_diss</option>
+                    <option value="pairDistanceSigmaNm">sigma_r</option>
+                    <option value="pairThetaSigmaDeg">sigma_theta</option>
+                    <option value="pairExchangeSigmaMHz">sigma_J</option>
+                    <option value="brightPairYield">Bright pair yield</option>
+                    <option value="hyperfineATrans_MHz">A hyperfine trans.</option>
+                    <option value="hyperfineBTrans_MHz">B hyperfine trans.</option>
+                    <option value="hyperfineALong_MHz">A hyperfine long.</option>
+                    <option value="hyperfineBLong_MHz">B hyperfine long.</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Y start</span>
+                  <input type="number" step="0.1" value="0" data-role="scan-start-y">
+                </label>
+                <label>
+                  <span>Y end</span>
+                  <input type="number" step="0.1" value="90" data-role="scan-end-y">
+                </label>
+                <label>
+                  <span>Y points</span>
+                  <input type="number" step="1" value="21" data-role="scan-points-y">
+                </label>
+              </div>
+            </div>
+            <canvas data-role="scan-canvas" class="sim-canvas" width="980" height="320"></canvas>
+            <p class="sim-plot-note">Scan contrast at the current `fMW` and current settings, either as a 1D trace or as a 2D heatmap.</p>
+          </article>
+
+          <article class="sim-card">
+            <h3>State populations</h3>
+            <div class="sim-table-wrap">
+              <table class="sim-table">
+                <thead>
+                  <tr>
+                    <th>State</th>
+                    <th>MW off</th>
+                    <th>MW on</th>
+                    <th>Delta</th>
+                  </tr>
+                </thead>
+                <tbody data-role="population-table"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="sim-card" data-role="lifetimes"></article>
+
+          <article class="sim-card" data-role="summary"></article>
+
+          <div class="sim-visual-grid">
+            <article class="sim-card">
+              <h3>Pulsed ODMR</h3>
+              <canvas data-role="pulsed-odmr-canvas" class="sim-canvas" width="640" height="280"></canvas>
+              <p class="sim-plot-note">Sequence: init laser (initDuration) → MW pulse (mwPulseDuration) → laser readout (readDuration). Reference: same but no MW (dark instead). Orange = pulsed contrast; grey dashed = steady-state ODMR rescaled for comparison.</p>
+            </article>
+            <article class="sim-card">
+              <h3>MW pulse (PL vs duration)</h3>
+              <canvas data-role="rabi-canvas" class="sim-canvas" width="640" height="280"></canvas>
+              <p class="sim-plot-note">Readout PL vs MW pulse duration at the ODMR peak frequency. Rate-equation model: spin-state transfer is exponential, not coherent Rabi oscillations.</p>
+            </article>
+          </div>
+
+          <article class="sim-card">
+            <h3>Spin decay (T1 curve)</h3>
+            <canvas data-role="t1-canvas" class="sim-canvas" width="980" height="240"></canvas>
+            <p class="sim-plot-note">Sequence: init laser → dark time (no laser, no MW, variable τ up to T1 max) → laser readout. Shows how the spin-polarized population relaxes toward the dark equilibrium.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Spin Pair ODMR Simulator</p>
+  </footer>
+
+  <script src="./simulator.js?v=20260312ag"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

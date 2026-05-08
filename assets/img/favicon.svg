@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="RizzatoLab favicon">
+  <rect width="64" height="64" rx="12" fill="#081923"/>
+  <circle cx="19" cy="33" r="7" fill="#3dd6c6"/>
+  <circle cx="43" cy="21" r="6" fill="#f87171"/>
+  <circle cx="43" cy="45" r="5" fill="#f8fafc"/>
+  <path d="M24.8 30.7 37.4 23M24.9 35.9 38.4 43" fill="none" stroke="#d9fbf7" stroke-width="4" stroke-linecap="round"/>
+</svg>

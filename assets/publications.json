@@ -1,5 +1,67 @@
 [
   {
+    "title": "Coherent Control of Nanoscale Nuclear Spin Ensembles in the Spin Noise Regime",
+    "authors": [
+      "Ana Martin",
+      "Roberto Rizzato",
+      "Carlos Munuera-Javaloy",
+      "Dileep Singh",
+      "Dominik B. Bucher",
+      "Jorge Casanova"
+    ],
+    "year": 2026,
+    "date": "2026-04-10",
+    "venue": "arXiv",
+    "type": "preprint",
+    "links": {
+      "doi": "10.48550/arxiv.2604.09310",
+      "url": "https://doi.org/10.48550/arxiv.2604.09310"
+    }
+  },
+  {
+    "title": "Quantum sensing with spin defects in boron nitride nanotubes",
+    "authors": [
+      "Roberto Rizzato",
+      "Andrea Alberdi Hidalgo",
+      "Linyan Nie",
+      "Elena Blundo",
+      "Nick R. von Grafenstein",
+      "Jonathan J. Finley",
+      "Dominik B. Bucher"
+    ],
+    "year": 2025,
+    "date": "2025-12-19",
+    "venue": "Nature Communications",
+    "type": "article",
+    "links": {
+      "doi": "10.1038/s41467-025-67538-2",
+      "url": "https://doi.org/10.1038/s41467-025-67538-2"
+    }
+  },
+  {
+    "title": "Optically detected and radio wave-controlled spin chemistry in flavoproteins",
+    "authors": [
+      "Kun Meng",
+      "Linyan Nie",
+      "Berger, Johannes",
+      "Nick R. von Grafenstein",
+      "Christopher Einholz",
+      "Weber, Stefan",
+      "Essen, Lars-Oliver",
+      "Roberto Rizzato",
+      "Erik Schleicher",
+      "Dominik B. Bucher"
+    ],
+    "year": 2025,
+    "date": "2025-04-23",
+    "venue": "arXiv",
+    "type": "preprint",
+    "links": {
+      "doi": "10.48550/arxiv.2504.16566",
+      "url": "http://arxiv.org/abs/2504.16566"
+    }
+  },
+  {
     "title": "Optically detected and radio wave-controlled spin chemistry in cryptochrome",
     "authors": [
       "Meng, Kun",
@@ -16,52 +78,89 @@
     "type": "article"
   },
   {
-    "title": "Quantum sensing with spin defects in boron nitride nanotubes",
-    "authors": [
-      "Rizzato, Roberto",
-      "Hidalgo, Andrea Alberdi",
-      "Nie, Linyan",
-      "Blundo, Elena",
-      "von Grafenstein, Nick R",
-      "Finley, Jonathan J",
-      "Bucher, Dominik B"
-    ],
-    "year": 2025,
-    "venue": "Nature Communications",
-    "type": "article"
-  },
-  {
     "title": "Extending radiowave frequency detection range with dressed states of solid-state spin ensembles",
     "authors": [
-      "Hermann, Jens C",
-      "Rizzato, Roberto",
-      "Bruckmaier, Fleming",
-      "Allert, Robin D",
-      "Blank, Aharon",
-      "Bucher, Dominik B"
+      "Jens C. Hermann",
+      "Roberto Rizzato",
+      "Fleming Bruckmaier",
+      "Robin D. Allert",
+      "Aharon Blank",
+      "Dominik B. Bucher"
     ],
     "year": 2024,
+    "date": "2024-10-26",
     "venue": "npj Quantum Information",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1038/s41534-024-00891-0",
+      "url": "https://doi.org/10.1038/s41534-024-00891-0"
+    }
+  },
+  {
+    "title": "Quantum sensors in diamonds for magnetic resonance spectroscopy: Current applications and future prospects",
+    "authors": [
+      "Roberto Rizzato",
+      "Nick R. von Grafenstein",
+      "Dominik B. Bucher"
+    ],
+    "year": 2023,
+    "date": "2023-12-25",
+    "venue": "Applied Physics Letters",
+    "type": "article",
+    "links": {
+      "doi": "10.1063/5.0169027",
+      "url": "https://doi.org/10.1063/5.0169027"
+    }
   },
   {
     "title": "Extending the coherence of spin defects in hBN enables advanced qubit control and quantum sensing",
     "authors": [
-      "Rizzato, Roberto",
-      "Schalk, Martin",
-      "Mohr, Stephan",
-      "Hermann, Jens C",
-      "Leibold, Joachim P",
-      "Bruckmaier, Fleming",
-      "Salvitti, Giovanna",
-      "Qian, Chenjiang",
-      "Ji, Peirui",
-      "Astakhov, Georgy V",
-      "others"
+      "Roberto Rizzato",
+      "Martin Schalk",
+      "Stephan Mohr",
+      "Jens C. Hermann",
+      "Joachim P. Leibold",
+      "Fleming Bruckmaier",
+      "Giovanna Salvitti",
+      "Chenjiang Qian",
+      "Peirui Ji",
+      "G. V. Astakhov",
+      "Ulrich Kentsch",
+      "M. Helm",
+      "Andreas V. Stier",
+      "Jonathan J. Finley",
+      "Dominik B. Bucher"
     ],
     "year": 2023,
-    "venue": "Nature communications",
-    "type": "article"
+    "date": "2023-08-22",
+    "venue": "Nature Communications",
+    "type": "article",
+    "links": {
+      "doi": "10.1038/s41467-023-40473-w",
+      "url": "https://doi.org/10.1038/s41467-023-40473-w"
+    }
+  },
+  {
+    "title": "The Role of Electrolytes in the Relaxation of Near-Surface Spin Defects in Diamond",
+    "authors": [
+      "Fabian A. Freire-Moschovitis",
+      "Roberto Rizzato",
+      "Anton Pershin",
+      "Moritz R. Schepp",
+      "Robin D. Allert",
+      "Lina M. Todenhagen",
+      "Martin S. Brandt",
+      "Ádám Gali",
+      "Dominik B. Bucher"
+    ],
+    "year": 2023,
+    "date": "2023-05-22",
+    "venue": "ACS Nano",
+    "type": "article",
+    "links": {
+      "doi": "10.1021/acsnano.3c01298",
+      "url": "https://doi.org/10.1021/acsnano.3c01298"
+    }
   },
   {
     "title": "Extending the room temperature spin coherence time of boron vacancies in hexagonal boron nitride",
@@ -83,17 +182,6 @@
     "type": "inproceedings"
   },
   {
-    "title": "Quantum sensors in diamonds for magnetic resonance spectroscopy: Current applications and future prospects",
-    "authors": [
-      "Rizzato, Roberto",
-      "von Grafenstein, Nick R",
-      "Bucher, Dominik B"
-    ],
-    "year": 2023,
-    "venue": "Applied Physics Letters",
-    "type": "article"
-  },
-  {
     "title": "Sensing Diamagnetic Electrolytes with Spin Defects in Diamond",
     "authors": [
       "Freire-Moschovitis, Fabian A.",
@@ -111,108 +199,142 @@
     "type": "article"
   },
   {
-    "title": "The role of electrolytes in the relaxation of near-surface spin defects in diamond",
+    "title": "Using Metal–Organic Frameworks to Confine Liquid Samples for Nanoscale NV-NMR",
     "authors": [
-      "Freire-Moschovitis, Fabian A",
-      "Rizzato, Roberto",
-      "Pershin, Anton",
-      "Schepp, Moritz R",
-      "Allert, Robin D",
-      "Todenhagen, Lina M",
-      "Brandt, Martin S",
-      "Gali, Adam",
-      "Bucher, Dominik B"
-    ],
-    "year": 2023,
-    "venue": "ACS nano",
-    "type": "article"
-  },
-  {
-    "title": "Polarization transfer from optically pumped ensembles of N-V centers to multinuclear spin baths",
-    "authors": [
-      "Rizzato, R",
-      "Bruckmaier, F",
-      "Liu, KS",
-      "Glaser, SJ",
-      "Bucher, DB"
+      "Kristina Liu",
+      "Xiaoxin Ma",
+      "Roberto Rizzato",
+      "A. Lisa Semrau",
+      "Alex Henning",
+      "Ian D. Sharp",
+      "Roland A. Fischer",
+      "Dominik B. Bucher"
     ],
     "year": 2022,
+    "date": "2022-12-08",
+    "venue": "Nano Letters",
+    "type": "article",
+    "links": {
+      "doi": "10.1021/acs.nanolett.2c03069",
+      "url": "https://doi.org/10.1021/acs.nanolett.2c03069"
+    }
+  },
+  {
+    "title": "Unveiling the Zero-Phonon Line of the Boron Vacancy Center by Cavity-Enhanced Emission",
+    "authors": [
+      "Chenjiang Qian",
+      "Viviana Villafañe",
+      "Martin Schalk",
+      "G. V. Astakhov",
+      "Ulrich Kentsch",
+      "M. Helm",
+      "Pedro Soubelet",
+      "Nathan P. Wilson",
+      "Roberto Rizzato",
+      "Stephan Mohr",
+      "Alexander W. Holleitner",
+      "Dominik Bucher",
+      "Andreas V. Stier",
+      "Jonathan J. Finley"
+    ],
+    "year": 2022,
+    "date": "2022-06-27",
+    "venue": "Nano Letters",
+    "type": "article",
+    "links": {
+      "doi": "10.1021/acs.nanolett.2c00739",
+      "url": "https://doi.org/10.1021/acs.nanolett.2c00739"
+    }
+  },
+  {
+    "title": "Polarization Transfer from Optically Pumped Ensembles of N-V Centers to Multinuclear Spin Baths",
+    "authors": [
+      "Roberto Rizzato",
+      "Fleming Bruckmaier",
+      "K.S. Liu",
+      "Steffen J. Glaser",
+      "Dominik Bucher"
+    ],
+    "year": 2022,
+    "date": "2022-02-24",
     "venue": "Physical Review Applied",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1103/physrevapplied.17.024067",
+      "url": "https://doi.org/10.1103/physrevapplied.17.024067"
+    }
   },
   {
-    "title": "Surface NMR using quantum sensors in diamond",
+    "title": "Polarization transfer from optically-pumped NV center ensembles to multinuclear spin baths",
     "authors": [
-      "Liu, Kristina S",
-      "Henning, Alex",
-      "Heindl, Markus W",
-      "Allert, Robin D",
-      "Bartl, Johannes D",
-      "Sharp, Ian D",
-      "Rizzato, Roberto",
-      "Bucher, Dominik B"
+      "Roberto Rizzato",
+      "Fleming Bruckmaier",
+      "K. S. Liu",
+      "Steffen J. Glaser",
+      "Dominik Bucher"
     ],
-    "year": 2022,
+    "year": 2021,
+    "date": "2021-11-23",
+    "venue": "arXiv",
+    "type": "preprint",
+    "links": {
+      "doi": "10.48550/arxiv.2111.11804",
+      "url": "http://arxiv.org/abs/2111.11804"
+    }
+  },
+  {
+    "title": "Surface NMR Using Quantum Sensors in Diamond",
+    "authors": [
+      "Kristina Liu",
+      "Alex Henning",
+      "Markus W. Heindl",
+      "Robin D. Allert",
+      "Johannes D. Bartl",
+      "Ian D. Sharp",
+      "Roberto Rizzato",
+      "Dominik Benjamin Bucher"
+    ],
+    "year": 2021,
+    "date": "2021-03-24",
     "venue": "Proceedings of the National Academy of Sciences",
-    "type": "article"
-  },
-  {
-    "title": "Unveiling the Zero-Phonon Line of the Boron Vacancy Center by Cavity Enhanced Emission",
-    "authors": [
-      "Qian, Chenjiang",
-      "Villafa\\~ne, Viviana",
-      "Schalk, Martin",
-      "Astakhov, Georgy V",
-      "Kentsch, Ulrich",
-      "Helm, Manfred",
-      "Soubelet, Pedro",
-      "Wilson, Nathan P",
-      "Rizzato, Roberto",
-      "Mohr, Stephan",
-      "others"
-    ],
-    "year": 2022,
-    "venue": "Nano Letters",
-    "type": "article"
-  },
-  {
-    "title": "Using Metal--Organic Frameworks to Confine Liquid Samples for Nanoscale NV-NMR",
-    "authors": [
-      "Liu, Kristina S",
-      "Ma, Xiaoxin",
-      "Rizzato, Roberto",
-      "Semrau, Anna L",
-      "Henning, Alex",
-      "Sharp, Ian D",
-      "Fischer, Roland A",
-      "Bucher, Dominik B"
-    ],
-    "year": 2022,
-    "venue": "Nano Letters",
-    "type": "article"
+    "type": "preprint",
+    "links": {
+      "doi": "10.1073/pnas.2111607119",
+      "url": "https://doi.org/10.1073/pnas.2111607119"
+    }
   },
   {
     "title": "Cross-polarisation ENDOR for spin-1 deuterium nuclei",
     "authors": [
-      "Bejenke, Isabel",
-      "Zeier, Robert",
-      "Rizzato, Roberto",
-      "Glaser, Steffen J",
-      "Bennati, Marina"
+      "Isabel Bejenke",
+      "Robert Zeier",
+      "Roberto Rizzato",
+      "Steffen J. Glaser",
+      "Marina Bennati"
     ],
     "year": 2020,
+    "date": "2020-06-12",
     "venue": "Molecular Physics",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1080/00268976.2020.1763490",
+      "url": "https://doi.org/10.1080/00268976.2020.1763490"
+    }
   },
   {
-    "title": "Cross-Polarization Electron-Nuclear Double Resonance Spectroscopy",
+    "title": "Cross‐Polarization Electron‐Nuclear Double Resonance Spectroscopy",
     "authors": [
-      "Rizzato, Roberto",
-      "Bennati, Marina"
+      "Roberto Rizzato",
+      "Marina Bennati"
     ],
     "year": 2015,
+    "date": "2015-10-27",
     "venue": "ChemPhysChem",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1002/cphc.201500938",
+      "url": "https://doi.org/10.1002/cphc.201500938"
+    }
   },
   {
     "title": "Development of Cross-polarization ENDOR Spectroscopy",
@@ -226,51 +348,71 @@
   {
     "title": "Enhanced sensitivity of electron-nuclear double resonance (ENDOR) by cross polarisation and relaxation",
     "authors": [
-      "Rizzato, Roberto",
-      "Bennati, Marina"
+      "Roberto Rizzato",
+      "Marina Bennati"
     ],
     "year": 2014,
+    "date": "2014-01-01",
     "venue": "Physical Chemistry Chemical Physics",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1039/c3cp55395g",
+      "url": "https://doi.org/10.1039/c3cp55395g"
+    }
   },
   {
     "title": "Cross-polarisation edited ENDOR",
     "authors": [
-      "Rizzato, Roberto",
-      "Kaminker, Ilia",
-      "Vega, Shimon",
-      "Bennati, Marina"
+      "Roberto Rizzato",
+      "Ilia Kaminker",
+      "Shimon Vega",
+      "Marina Bennati"
     ],
     "year": 2013,
+    "date": "2013-07-09",
     "venue": "Molecular Physics",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1080/00268976.2013.816795",
+      "url": "https://doi.org/10.1080/00268976.2013.816795"
+    }
+  },
+  {
+    "title": "Conformational Equilibria in Adducts of Alcohols with Ethers: The Rotational Spectrum of Ethylalcohol‐Dimethylether",
+    "authors": [
+      "Luca Evangelisti",
+      "Gang Feng",
+      "Roberto Rizzato",
+      "Walther Camináti"
+    ],
+    "year": 2011,
+    "date": "2011-06-22",
+    "venue": "ChemPhysChem",
+    "type": "article",
+    "links": {
+      "doi": "10.1002/cphc.201100134",
+      "url": "https://doi.org/10.1002/cphc.201100134"
+    }
   },
   {
     "title": "Almost free methyl top internal rotation: Rotational spectrum of 2-butynoic acid",
     "authors": [
-      "Ilyushin, Vadim",
-      "Rizzato, Roberto",
-      "Evangelisti, Luca",
-      "Feng, Gang",
-      "Maris, Assimo",
-      "Melandri, Sonia",
-      "Caminati, Walther"
+      "V. V. Ilyushin",
+      "Roberto Rizzato",
+      "Luca Evangelisti",
+      "Gang Feng",
+      "Assimo Maris",
+      "Sonia Melandri",
+      "Walther Camináti"
     ],
     "year": 2011,
+    "date": "2011-04-14",
     "venue": "Journal of Molecular Spectroscopy",
-    "type": "article"
-  },
-  {
-    "title": "Conformational Equilibria in Adducts of Alcohols with Ethers: The Rotational Spectrum of Ethylalcohol-Dimethylether",
-    "authors": [
-      "Evangelisti, Luca",
-      "Feng, Gang",
-      "Rizzato, Roberto",
-      "Caminati, Walther"
-    ],
-    "year": 2011,
-    "venue": "ChemPhysChem",
-    "type": "article"
+    "type": "article",
+    "links": {
+      "doi": "10.1016/j.jms.2011.03.028",
+      "url": "https://doi.org/10.1016/j.jms.2011.03.028"
+    }
   },
   {
     "title": "Electron Nuclear Cross Polarization (eNCP) in ENDOR Spectroscopy",

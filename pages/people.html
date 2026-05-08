@@ -5,6 +5,8 @@
   <title>People – RizzatoLab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="RizzatoLab Team Members">
+  <meta name="theme-color" content="#081923">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../style.css">
   </head>
 
@@ -21,13 +23,13 @@
   </section>
 
   <!-- NAVIGATION -->
-  <nav class="top-nav visible">
+  <nav class="top-nav visible" data-always-visible="true">
     <ul>
       <li><a href="index.html#home">Home</a></li>
       <li><a href="research.html">Research</a></li>
       <li><a href="people.html">People</a></li>
       <li><a href="publications.html">Publications</a></li>
-      <li><a href="index.html#openings">Openings</a></li>
+      <li><a href="openings.html">Openings</a></li>
     </ul>
   </nav>
 
@@ -45,7 +47,7 @@
         <!-- PERSON CARD 1 -->
         <div class="person-card">
           <div class="person-image">
-            <img src="../assets/img/placeholder-person.svg" alt="Portrait placeholder">
+            <img class="portrait-roberto" src="../assets/img/Roberto%20Rizzato%20Lab%20Shooting%202026/30-DSC02356.jpg" alt="Portrait of Roberto Rizzato" loading="lazy">
           </div>
           <h3 class="person-name">
             <a href="mailto:roberto.rizzato@tum.de">Roberto Rizzato</a>
@@ -59,7 +61,7 @@
         <!-- PERSON CARD 2 (TEMPLATE) -->
         <div class="person-card">
           <div class="person-image">
-            <img src="../assets/img/placeholder-person.svg" alt="Portrait placeholder">
+            <img class="portrait-berk" src="../assets/img/Berk.jpeg" alt="Portrait of Berk Kiliclar" loading="lazy">
           </div>
           <h3 class="person-name">
             <a href="mailto:berk.kiliclar@tum.de">Berk Kiliclar</a>
@@ -69,7 +71,17 @@
             I completed my bachelor’s in physics at LMU and am currently doing a master’s degree in condensed matter physics at TUM. My thesis focuses on the simultaneous characterization of multiple defects using an EMCCD camera.
           </p>
         </div>
-
+        <!-- PERSON CARD 3 -->
+        <div class="person-card">
+          <div class="person-image">
+            <img src="../assets/img/Rui.JPG" alt="Portrait of Rui" loading="lazy">
+          </div>
+          <h3 class="person-name">Rui</h3>
+          <p class="person-title">Master's student, Technical University of Munich / LMU</p>
+          <p class="person-description">
+            I completed my bachelor's degree in Physics at Zhejiang University and I am currently pursuing the Quantum Science &amp; Technology master's program at TUM and LMU. My academic interests include quantum sensing, spin physics, and solid-state quantum systems, particularly optically active spin defects and their applications in nanoscale quantum sensing.
+          </p>
+        </div>
       </div>
 
       <div class="joining-info">
@@ -127,58 +139,7 @@
     <p>© <span id="year"></span> Rizzato Lab</p>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const nav = document.querySelector(".top-nav");
-
-    // Keep nav visible on standalone pages like people.html
-    if (location.pathname && location.pathname.endsWith('people.html')) {
-      nav.classList.add('visible');
-    } else {
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 10) {
-          nav.classList.add("visible");
-        } else {
-          nav.classList.remove("visible");
-        }
-      });
-    }
-
-    // Highlight active nav link matching current page or section
-    function setActiveNav(){
-      const links = document.querySelectorAll('.top-nav a');
-      const page = location.pathname.split('/').pop() || 'index.html';
-      const hash = location.hash || '';
-      links.forEach(l => {
-        l.classList.remove('active');
-        const href = l.getAttribute('href');
-        let hrefPage = href;
-        let hrefHash = '';
-        if (href.startsWith('#')){
-          hrefPage = 'index.html';
-          hrefHash = href;
-        } else if (href.includes('#')){
-          const parts = href.split('#');
-          hrefPage = parts[0] || 'index.html';
-          hrefHash = '#' + parts[1];
-        }
-        if (!hrefPage) hrefPage = 'index.html';
-
-        // handle fragment links specially (don't wrongly match index.html)
-        const skipHashes = ['#openings', '#contact'];
-        if (hrefHash) {
-          if (page === 'index.html') {
-            if (hash && hrefHash === hash && !skipHashes.includes(hrefHash)) l.classList.add('active');
-            else if (!hash && (href === '#home' || href === 'index.html#home' || href === 'index.html' || href === './' )) l.classList.add('active');
-          }
-        } else {
-          if (hrefPage === page) l.classList.add('active');
-        }
-      });
-    }
-    setActiveNav();
-  </script>
+  <script src="../assets/site.js"></script>
 
 </body>
 </html>

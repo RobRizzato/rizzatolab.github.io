@@ -5,6 +5,8 @@
   <title>Publications – RizzatoLab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="RizzatoLab Publications">
+  <meta name="theme-color" content="#081923">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
    <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -21,13 +23,13 @@
   </section>
 
   <!-- NAVIGATION -->
-  <nav class="top-nav visible">
+  <nav class="top-nav visible" data-always-visible="true">
     <ul>
       <li><a href="index.html#home">Home</a></li>
       <li><a href="research.html">Research</a></li>
       <li><a href="people.html">People</a></li>
       <li><a href="publications.html">Publications</a></li>
-      <li><a href="index.html#openings">Openings</a></li>
+      <li><a href="openings.html">Openings</a></li>
     </ul>
   </nav>
 
@@ -35,7 +37,7 @@
   <main class="content">
     <section class="publications-section">
       <p class="publications-intro">
-        This page is automatically generated looking for Roberto Rizzato's publications, using Google Scholar as a source.
+        This list is generated from Roberto Rizzato's Google Scholar bibliography and local BibTeX data.
       </p>
 
       <div class="pub-actions">
@@ -104,44 +106,6 @@
 
     <script src="../assets/publications.js"></script>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const nav = document.querySelector(".top-nav");
-    if (location.pathname && location.pathname.endsWith('publications.html')) {
-      nav.classList.add('visible');
-    }
-
-    function setActiveNav(){
-      const links = document.querySelectorAll('.top-nav a');
-      const page = location.pathname.split('/').pop() || 'index.html';
-      const hash = location.hash || '';
-      links.forEach(l => {
-        l.classList.remove('active');
-        const href = l.getAttribute('href');
-        let hrefPage = href;
-        let hrefHash = '';
-        if (href.startsWith('#')){
-          hrefPage = 'index.html';
-          hrefHash = href;
-        } else if (href.includes('#')){
-          const parts = href.split('#');
-          hrefPage = parts[0] || 'index.html';
-          hrefHash = '#' + parts[1];
-        }
-        if (!hrefPage) hrefPage = 'index.html';
-
-        const skipHashes = ['#openings', '#contact'];
-        if (hrefHash) {
-          if (page === 'index.html') {
-            if (hash && hrefHash === hash && !skipHashes.includes(hrefHash)) l.classList.add('active');
-            else if (!hash && (href === '#home' || href === 'index.html#home' || href === 'index.html' || href === './' )) l.classList.add('active');
-          }
-        } else {
-          if (hrefPage === page) l.classList.add('active');
-        }
-      });
-    }
-
     function escapeHtml(value){
       return String(value).replace(/[&<>"']/g, (ch) => {
         switch (ch) {
@@ -196,17 +160,16 @@
       }).join('');
     }
 
-    setActiveNav();
-
-    // Prefer a local JS data file (works even when opening via file://).
-    if (Array.isArray(window.PUBLICATIONS) && window.PUBLICATIONS.length > 0) {
-      renderPublications(window.PUBLICATIONS);
+    // Prefer fresh JSON when served over HTTP; keep publications.js as the file:// fallback.
+    if (location.protocol === 'file:') {
+      renderPublications(Array.isArray(window.PUBLICATIONS) ? window.PUBLICATIONS : []);
     } else {
-        fetch('../assets/publications.json', { cache: 'no-store' })
+      fetch('../assets/publications.json', { cache: 'no-store' })
         .then(r => r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))
         .then(renderPublications)
-        .catch(() => renderPublications([]));
+        .catch(() => renderPublications(Array.isArray(window.PUBLICATIONS) ? window.PUBLICATIONS : []));
     }
   </script>
+  <script src="../assets/site.js"></script>
 
 </body>
