@@ -1,5 +1,28 @@
 [
   {
+    "title": "Optically detected and radio wave-controlled spin chemistry in flavoproteins",
+    "authors": [
+      "Kun Meng",
+      "Linyan Nie",
+      "Johannes Berger",
+      "Nick R. von Grafenstein",
+      "Christopher Einholz",
+      "Lars-Oliver Essen",
+      "Roberto Rizzato",
+      "Roberto Rizzato",
+      "Erik Schleicher",
+      "Dominik B. Bucher"
+    ],
+    "year": 2026,
+    "date": "2026-05-29",
+    "venue": "Nature Biotechnology",
+    "type": "article",
+    "links": {
+      "doi": "10.1038/s41587-026-03158-5",
+      "url": "https://doi.org/10.1038/s41587-026-03158-5"
+    }
+  },
+  {
     "title": "Coherent Control of Nanoscale Nuclear Spin Ensembles in the Spin Noise Regime",
     "authors": [
       "Ana Martin",
@@ -36,29 +59,6 @@
     "links": {
       "doi": "10.1038/s41467-025-67538-2",
       "url": "https://doi.org/10.1038/s41467-025-67538-2"
-    }
-  },
-  {
-    "title": "Optically detected and radio wave-controlled spin chemistry in flavoproteins",
-    "authors": [
-      "Kun Meng",
-      "Linyan Nie",
-      "Berger, Johannes",
-      "Nick R. von Grafenstein",
-      "Christopher Einholz",
-      "Weber, Stefan",
-      "Essen, Lars-Oliver",
-      "Roberto Rizzato",
-      "Erik Schleicher",
-      "Dominik B. Bucher"
-    ],
-    "year": 2025,
-    "date": "2025-04-23",
-    "venue": "arXiv",
-    "type": "preprint",
-    "links": {
-      "doi": "10.48550/arxiv.2504.16566",
-      "url": "http://arxiv.org/abs/2504.16566"
     }
   },
   {
