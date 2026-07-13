@@ -265,6 +265,27 @@
     }
   },
   {
+    "title": "Surface NMR using quantum sensors in diamond",
+    "authors": [
+      "Kristina Liu",
+      "Alex Henning",
+      "Markus W. Heindl",
+      "Robin D. Allert",
+      "Johannes D. Bartl",
+      "Ian D. Sharp",
+      "Roberto Rizzato",
+      "Dominik B. Bucher"
+    ],
+    "year": 2022,
+    "date": "2022-01-26",
+    "venue": "Proceedings of the National Academy of Sciences",
+    "type": "preprint",
+    "links": {
+      "doi": "10.1073/pnas.2111607119",
+      "url": "https://doi.org/10.1073/pnas.2111607119"
+    }
+  },
+  {
     "title": "Polarization transfer from optically-pumped NV center ensembles to multinuclear spin baths",
     "authors": [
       "Roberto Rizzato",
@@ -280,27 +301,6 @@
     "links": {
       "doi": "10.48550/arxiv.2111.11804",
       "url": "http://arxiv.org/abs/2111.11804"
-    }
-  },
-  {
-    "title": "Surface NMR Using Quantum Sensors in Diamond",
-    "authors": [
-      "Kristina Liu",
-      "Alex Henning",
-      "Markus W. Heindl",
-      "Robin D. Allert",
-      "Johannes D. Bartl",
-      "Ian D. Sharp",
-      "Roberto Rizzato",
-      "Dominik B. Bucher"
-    ],
-    "year": 2021,
-    "date": "2021-03-24",
-    "venue": "Proceedings of the National Academy of Sciences",
-    "type": "preprint",
-    "links": {
-      "doi": "10.1073/pnas.2111607119",
-      "url": "https://doi.org/10.1073/pnas.2111607119"
     }
   },
   {
