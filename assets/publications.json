@@ -6,7 +6,7 @@
       "Roberto Rizzato",
       "Carlos Munuera-Javaloy",
       "Dileep Singh",
-      "Dominik B. Bucher",
+      "Dominik Benjamin Bucher",
       "Jorge Casanova"
     ],
     "year": 2026,
@@ -15,7 +15,7 @@
     "type": "preprint",
     "links": {
       "doi": "10.48550/arxiv.2604.09310",
-      "url": "https://doi.org/10.48550/arxiv.2604.09310"
+      "url": "https://arxiv.org/abs/2604.09310"
     }
   },
   {
@@ -26,8 +26,8 @@
       "Linyan Nie",
       "Elena Blundo",
       "Nick R. von Grafenstein",
-      "Jonathan J. Finley",
-      "Dominik B. Bucher"
+      "Jonathan James Finley",
+      "Dominik Benjamin Bucher"
     ],
     "year": 2025,
     "date": "2025-12-19",
@@ -50,7 +50,7 @@
       "Lars-Oliver Essen",
       "Roberto Rizzato",
       "Erik Schleicher",
-      "Dominik B. Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2025,
     "date": "2025-04-22",
@@ -85,7 +85,7 @@
       "Fleming Bruckmaier",
       "Robin D. Allert",
       "Aharon Blank",
-      "Dominik B. Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2024,
     "date": "2024-10-26",
@@ -101,7 +101,7 @@
     "authors": [
       "Roberto Rizzato",
       "Nick R. von Grafenstein",
-      "Dominik B. Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2023,
     "date": "2023-12-25",
@@ -127,9 +127,9 @@
       "G. V. Astakhov",
       "Ulrich Kentsch",
       "M. Helm",
-      "Andreas V. Stier",
-      "Jonathan J. Finley",
-      "Dominik B. Bucher"
+      "Andreas Volker Stier",
+      "Jonathan James Finley",
+      "Dominik Benjamin Bucher"
     ],
     "year": 2023,
     "date": "2023-08-22",
@@ -151,7 +151,7 @@
       "Lina M. Todenhagen",
       "Martin S. Brandt",
       "Ádám Gali",
-      "Dominik B. Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2023,
     "date": "2023-05-22",
@@ -204,11 +204,11 @@
       "Kristina Liu",
       "Xiaoxin Ma",
       "Roberto Rizzato",
-      "A. Lisa Semrau",
+      "Anna Lisa Semrau",
       "Alex Henning",
       "Ian D. Sharp",
       "Roland A. Fischer",
-      "Dominik B. Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2022,
     "date": "2022-12-08",
@@ -228,14 +228,14 @@
       "G. V. Astakhov",
       "Ulrich Kentsch",
       "M. Helm",
-      "Pedro Soubelet",
+      "Pedro I. Soubelet",
       "Nathan P. Wilson",
       "Roberto Rizzato",
       "Stephan Mohr",
       "Alexander W. Holleitner",
-      "Dominik Bucher",
-      "Andreas V. Stier",
-      "Jonathan J. Finley"
+      "Dominik Benjamin Bucher",
+      "Andreas Volker Stier",
+      "Jonathan James Finley"
     ],
     "year": 2022,
     "date": "2022-06-27",
@@ -253,7 +253,7 @@
       "Fleming Bruckmaier",
       "K.S. Liu",
       "Steffen J. Glaser",
-      "Dominik Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2022,
     "date": "2022-02-24",
@@ -292,7 +292,7 @@
       "Fleming Bruckmaier",
       "K. S. Liu",
       "Steffen J. Glaser",
-      "Dominik Bucher"
+      "Dominik Benjamin Bucher"
     ],
     "year": 2021,
     "date": "2021-11-23",
@@ -397,7 +397,7 @@
   {
     "title": "Almost free methyl top internal rotation: Rotational spectrum of 2-butynoic acid",
     "authors": [
-      "V. V. Ilyushin",
+      "Vadim V. Ilyushin",
       "Roberto Rizzato",
       "Luca Evangelisti",
       "Gang Feng",
