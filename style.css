@@ -1120,37 +1120,27 @@ body{
 .funding-logos{
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 40px;
   flex-wrap: wrap;
   margin: 0;
 }
 
 .funding-logos img{
-  height: 56px;
+  height: 100px;
   width: auto;
-  max-width: min(260px, 100%);
+  max-width: min(500px, calc(100vw - 40px));
   object-fit: contain;
   opacity: 1;
   filter: none;
 }
 
-.funding-logos .funding-logo.erc img{
-  height: 120px;
-  max-width: min(460px, 100%);
-}
-
-.funding-logos .funding-logo.sprind img{
-  height: 78px;
-  max-width: min(230px, 100%);
-}
-
 @media (max-width: 600px){
-  .funding-logos .funding-logo.erc img{
-    height: 96px;
+  .funding-logos{
+    gap: 28px;
   }
 
-  .funding-logos .funding-logo.sprind img{
-    height: 70px;
+  .funding-logos img{
+    height: 82px;
   }
 }
 
