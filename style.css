@@ -1139,9 +1139,18 @@ body{
   max-width: min(460px, 100%);
 }
 
+.funding-logos .funding-logo.sprind img{
+  height: 78px;
+  max-width: min(230px, 100%);
+}
+
 @media (max-width: 600px){
   .funding-logos .funding-logo.erc img{
     height: 96px;
+  }
+
+  .funding-logos .funding-logo.sprind img{
+    height: 70px;
   }
 }
 
