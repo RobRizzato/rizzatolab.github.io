@@ -39,29 +39,6 @@
     }
   },
   {
-    "title": "Optically detected and radio wave-controlled spin chemistry in flavoproteins",
-    "authors": [
-      "Kun Meng",
-      "Linyan Nie",
-      "Johannes Berger",
-      "Nick R. von Grafenstein",
-      "Christopher Einholz",
-      "Stefan Weber",
-      "Lars-Oliver Essen",
-      "Roberto Rizzato",
-      "Erik Schleicher",
-      "Dominik Bucher"
-    ],
-    "year": 2025,
-    "date": "2025-04-22",
-    "venue": "bioRxiv",
-    "type": "preprint",
-    "links": {
-      "doi": "10.1101/2025.04.16.649006",
-      "url": "https://doi.org/10.1101/2025.04.16.649006"
-    }
-  },
-  {
     "title": "Optically detected and radio wave-controlled spin chemistry in cryptochrome",
     "authors": [
       "Meng, Kun",
@@ -143,7 +120,7 @@
   {
     "title": "The Role of Electrolytes in the Relaxation of Near-Surface Spin Defects in Diamond",
     "authors": [
-      "Fabian A. Freire-Moschovitis",
+      "Fabian Alexander Freire-Moschovitis",
       "Roberto Rizzato",
       "Anton Pershin",
       "Moritz R. Schepp",
